@@ -1,6 +1,6 @@
 package com.asamgir.example.domain;
 
-public class Customer {
+public class Customer extends Person {
 
 	private String firstName;
 
