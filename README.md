@@ -53,4 +53,16 @@ public static void main(String[] args) {
 ### Registry using Builder
 - A registry is also use to create other objects and registry has also same roll as factory. 
 - the difference between factory and registry is registry works with key, you can pass a key to factory method and this factory method will create new object.
-- 
+- switch case is most useful mechanism to design this pattern, but using this mechanism you need to know the objects details at the compile time using java 8 features what we can do is we can make it dynamic.
+- Also it is recommended that for design registry pattern we can use HashMap because registry use string and constructor of specific class to create an object so we can use String as a key.
+- there have some pinpoints to create registry pattern
+	- Use Builder pattern for design a registry pattern.
+	- add element into registry and seal it.
+- JDK 8 have also some registry patterns with Builder pattern e.g Stream.Builder
+- When we call build() method from Stream.Builder after that JDK will not allow Stream.Builder to call add() method and seal that object, due to several problems here :
+	- If anyone get that reference and use then application will throw IllegalStateException 
+- As per design pattern best practice we can implement Factory and Builder class separately and make them work together.
+- Builder<T> class should be contains methods like add(), register()
+- Factory<T> class should be contains methods like createFactory(String labelName)
+- Factory<T> class will contain one static method 	build(Builder<T> builder) {}
+ 

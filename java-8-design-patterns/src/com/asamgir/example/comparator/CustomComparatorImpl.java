@@ -9,7 +9,6 @@ public class CustomComparatorImpl {
 	public static void main(String[] args) {
 		Person p1 = new Person(28, "Ajay");
 		Person p2 = new Person(28, "Peter");
-		Person p3 = new Person(30, "Andrea");
 		Person p4 = new Person(33, "Ajay");
 		
 		Function<Person, String> getName = p -> p.getName();
