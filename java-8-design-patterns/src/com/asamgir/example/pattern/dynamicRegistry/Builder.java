@@ -1,14 +1,14 @@
 package com.asamgir.example.pattern.dynamicRegistry;
 
-import com.asamgir.example.domain.Person;
-
 /**
  * 
  * @author Ajay Samgir
  *
  * @param <T>
  */
-public interface Builder<Person> {
+@SuppressWarnings("hiding")
+@FunctionalInterface
+public interface Builder<T> {
 
 	/**
 	 * This method is return nothing because purpose of this method is just registration of the factory 
@@ -16,5 +16,5 @@ public interface Builder<Person> {
 	 * @param type
 	 * @param factory
 	 */
-	void register (String type, Factory<? extends Person> factory);
+	void register (String type, Factory<T> factory);
 }

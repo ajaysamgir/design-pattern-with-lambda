@@ -20,7 +20,7 @@ public class DynamicRegistryImpl {
 
 		Consumer<Builder<Person>> consumer = consumer1.andThen(consumer2).andThen(consumer3);
 
-		Registry createRegistory = Registry.createRegistory(consumer);
+		Registry<?> createRegistory = Registry.createRegistory(consumer, s -> {throw new IllegalArgumentException("" + s);});
 
 		Factory<Student> buildStudentFactory = (Factory<Student>) createRegistory.buildPersonFactory("Student");
 		Student s = (Student) buildStudentFactory.newInstance();
