@@ -65,4 +65,5 @@ public static void main(String[] args) {
 - Builder<T> class should be contains methods like add(), register()
 - Factory<T> class should be contains methods like createFactory(String labelName)
 - Factory<T> class will contain one static method 	build(Builder<T> builder) {}
- 
+
+- Builder pattern helps to create dynamic Registry pattern. 
