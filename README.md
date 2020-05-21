@@ -59,6 +59,7 @@ public static void main(String[] args) {
 	- Use Builder pattern for design a registry pattern.
 	- add element into registry and seal it.
 - JDK 8 have also some registry patterns with Builder pattern e.g Stream.Builder
+-
 - When we call build() method from Stream.Builder after that JDK will not allow Stream.Builder to call add() method and seal that object, due to several problems here :
 	- If anyone get that reference and use then application will throw IllegalStateException 
 - As per design pattern best practice we can implement Factory and Builder class separately and make them work together.
